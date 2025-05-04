@@ -1,0 +1,10 @@
+<div class="pokemon-container">
+  <div *ngFor="let pokemon of listaPokemons" class="pokemon-card">
+    <img [src]="pokemon.imagem" [alt]="pokemon.nome" class="pokemon-image" />
+    <h3>{{ capitalizeFirstLetter(pokemon.nome) }}</h3>
+    <ul class="tipos">
+      <li *ngFor="let tipo of pokemon.tipos">{{ tipo }}</li>
+    </ul>
+    <p class="descricao">{{ pokemon.descricao }}</p>
+  </div>
+</div>
