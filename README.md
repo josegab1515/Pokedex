@@ -41,6 +41,8 @@ A interface se adapta a diferentes tamanhos de tela
 
 Cards se reorganizam automaticamente com `col-12 col-sm-6 col-md-6 col-lg-4`.
 
+---
+
 # PokeAPI
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
