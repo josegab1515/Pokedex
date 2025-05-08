@@ -1,42 +1,39 @@
+<app-header></app-header>
 <div class="container-fluid container-poke">
   <div class="row poke-org">
     @for (pokemon of listaPokemons.slice(0, quantidadeExibida); track $index) {
-      <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-        <div class="pokemon-card card shadow text-center"
-            [ngStyle]="{ 'background-color': getCorTipo(pokemon.tipos[0]) }"
-            (click)="toggleFocus($event)">
-          
-          <div class="img-num order-2">
-            <img [src]="pokemon.imagem" [alt]="pokemon.nome" class="poke-img" />
-            <p class="text-light ">#{{ pokemon.id.toString().padStart(4, '0') }}</p>
-            <img src="imgs-poke\pokeball-gray.png"
-                alt="pokebola cinza" class="poke-gray">
+
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+      <div class="pokemon-card card shadow text-center" [ngStyle]="{ 'background-color': getCorTipo(pokemon.tipos[0])}"
+        (click)="toggleFocus($event)">
+
+        <div class="img-num order-2">
+          <img [src]="pokemon.imagem" [alt]="pokemon.nome" class="poke-img" />
+          <p class="text-light ">#{{ pokemon.id.toString().padStart(4, '0') }}</p>
+          <img src="imgs-poke\pokeball-gray.png" alt="pokebola cinza" class="poke-gray">
+        </div>
+
+        <div class="card-body poke-body">
+          <div class="info-poke order-1">
+            <h5 class="card-title">{{ capitalizeFirstLetter(pokemon.nome) }}</h5>
+
+            <div class="poke-tipo">
+              <span *ngFor="let tipo of pokemon.tipos" class="tipo"
+                [ngStyle]="{ 'background-color': getCorTipoTipo(tipo)}">
+                {{ tipo }}
+              </span>
+            </div>
           </div>
 
-          <div class="card-body poke-body">
-            <div class="info-poke order-1">
-              <h5 class="card-title">{{ capitalizeFirstLetter(pokemon.nome) }}</h5>
-
-              <div class="poke-tipo">
-                <span *ngFor="let tipo of pokemon.tipos"
-                      class="tipo"
-                      [ngStyle]="{ 'background-color': getCorTipoTipo(tipo)}">
-                  {{ tipo }}
-                </span>
-              </div>
-            </div>
-
-            <div class="pokemon-desc-wrapper">
-              <p class="pokemon-desc">{{ pokemon.descricao }}</p>
-            </div>
+          <div class="pokemon-desc-wrapper">
+            <p class="pokemon-desc">{{ pokemon.descricao }}</p>
           </div>
         </div>
       </div>
+    </div>
     }
-    <app-btn-more 
-    *ngIf="quantidadeExibida < listaPokemons.length"
-    [texto]="'Carregar Mais'"
-    (clique)="carregarMais()">
+    <app-btn-more *ngIf="quantidadeExibida < listaPokemons.length" [texto]="'Carregar Mais'" (clique)="carregarMais()">
     </app-btn-more>
   </div>
 </div>
+<app-footer></app-footer>

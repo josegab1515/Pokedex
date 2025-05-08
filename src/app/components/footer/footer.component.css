@@ -1,0 +1,26 @@
+.footer-pokemon {
+    background: linear-gradient(45deg, #b71c1c, #f9a825);
+    color: #ffffff;
+    border-top: 1px solid #111;
+}
+
+.footer-pokemon .social-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 6px 8px;
+    transition: transform 0.3s ease;
+}
+
+.footer-pokemon .social-btn:hover {
+    background-color: white;
+    color: #b71c1c;
+    transform: scale(1.1);
+}
+
+.footer-copy {
+    background-color: #1e1e1e;
+    color: #ccc;
+    font-size: 11px;
+}

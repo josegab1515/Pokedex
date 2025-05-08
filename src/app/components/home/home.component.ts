@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { forkJoin, switchMap, map, Observable } from 'rxjs';
 import { PokeApiService } from '../../services/poke-api.service';
-import { Stats } from 'fs';
 import { BtnMoreComponent } from '../btn-more/btn-more.component';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 interface PokemonCompleto {
   id: number;
@@ -27,12 +28,13 @@ interface TipoData {
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports: [CommonModule,BtnMoreComponent],
+  imports: [CommonModule, BtnMoreComponent, HeaderComponent, FooterComponent],
   standalone: true
 })
 export class HomeComponent implements OnInit {
 
   listaPokemons: PokemonCompleto[] = [];
+
   private apiUrlImage = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
 
   constructor(private pokeApiService: PokeApiService) {}
@@ -94,6 +96,7 @@ export class HomeComponent implements OnInit {
     ).subscribe({
       next: (listaFinal: PokemonCompleto[]) => {
         this.listaPokemons = listaFinal;
+       
       },
       error: (err) => {
         console.error('Erro ao carregar Pokémons:', err);
@@ -157,7 +160,7 @@ export class HomeComponent implements OnInit {
     return coresPorTipo[tipoNormalizado] || '#F2CCC3'; 
   }
 
-  quantidadeExibida: number = 1;
+  quantidadeExibida: number = 15;
   carregarMais() {
     this.quantidadeExibida += 10;
   }
@@ -181,6 +184,7 @@ export class HomeComponent implements OnInit {
             card.classList.remove('focused');
         }, 10000); 
     }
-}
+  }
   
 }
+

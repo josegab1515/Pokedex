@@ -1,0 +1,16 @@
+.btn-color {
+    background-color: #D62828; 
+    border-color: #CC0000;
+    color: white;
+  }
+  
+.btn-color:hover {
+    background-color: #a00000;
+    border-color: #a00000;
+}
+
+.btn-color img {
+    width: auto;
+    height: 25px;
+  }
+  
