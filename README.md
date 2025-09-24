@@ -1,3 +1,48 @@
+# Pokédex Pokémon 🐾
+
+Uma Pokédex estilizada e responsiva desenvolvida em **Angular**, com visual inspirado no universo Pokémon, exibindo cards de pokémons com informações como nome, número, tipos, imagem e descrição.
+
+## 🔗 Deploy
+Acesse a aplicação online aqui: (https://mypokedex-xi.vercel.app)
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+- Angular (standalone components)
+- TypeScript
+- HTML5 + CSS3
+- Bootstrap 5
+- Bootstrap Icons
+- Vercel (deploy)
+
+---
+
+## ⚙️ Funcionalidades
+
+- ✅ Listagem de pokémons com:
+  - Imagem
+  - Nome 
+  - ID formatado (`#0001`)
+  - Tipos coloridos com base no tipo
+  - Descrição resumida
+- ✅ Cards com cores temáticas de cada tipo
+- ✅ Responsividade (desktop, tablet e celular)
+- ✅ Botão “Carregar Mais”
+- ✅ Footer com redes sociais e design temático Pokémon
+- ✅ Header fixo no topo
+- ✅ Ícones de redes sociais com Bootstrap Icons
+
+---
+
+## 📱 Responsividade
+
+A interface se adapta a diferentes tamanhos de tela
+
+Cards se reorganizam automaticamente com `col-12 col-sm-6 col-md-6 col-lg-4`.
+
+---
+
 # PokeAPI
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
