@@ -1,4 +1,10 @@
 <app-header></app-header>
+
+<div *ngIf="loading" class="loading-container">
+  <div class="pikachu-run"></div>
+  <p>Os Pokémons estão chegando...</p>
+</div>
+
 <div class="container-fluid container-poke">
   <div class="row poke-org">
     @for (pokemon of listaPokemons.slice(0, quantidadeExibida); track $index) {

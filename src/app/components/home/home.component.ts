@@ -34,6 +34,8 @@ interface TipoData {
 export class HomeComponent implements OnInit {
 
   listaPokemons: PokemonCompleto[] = [];
+  
+  loading: boolean = true;
 
   private apiUrlImage = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
 
@@ -96,10 +98,11 @@ export class HomeComponent implements OnInit {
     ).subscribe({
       next: (listaFinal: PokemonCompleto[]) => {
         this.listaPokemons = listaFinal;
-       
+        this.loading = false;
       },
       error: (err) => {
         console.error('Erro ao carregar Pokémons:', err);
+        this.loading = false;
       }
     });
   }
@@ -185,6 +188,8 @@ export class HomeComponent implements OnInit {
         }, 10000); 
     }
   }
+
+
   
 }
 

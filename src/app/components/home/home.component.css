@@ -42,8 +42,6 @@
 
 }
 
-
-
 .pokemon-card.focused .pokemon-desc-wrapper {
     filter: none; 
 }
@@ -140,6 +138,33 @@
     margin-left: 15px;
 }
 
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap: 15px;
+  }
+  
+  .pikachu-run {
+    width: 80px;
+    height: 50px;
+    background: url('/imgs-poke/pikachu2.png') 0 0 no-repeat;
+    animation: run 1.3s steps(16) infinite; 
+  }
+  
+  @keyframes run {
+    0% { background-position-x: 0; }
+    99.999% { background-position-x: -1200px; }
+    100% { background-position-x: -1280px; }
+  }
+  
+  .loading-container p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+  }
 
 @media (max-width: 780px) {
     .poke-org .col-12 {
